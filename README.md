@@ -41,6 +41,8 @@ Credenciais locais, dependências, screenshots, vídeos e logs ficam fora do Git
 
 Este projeto também atende ao exercício de integração contínua com Jenkins, usando o repositório existente: https://github.com/allesoares/exercicio-cy-avancado.
 
+As alterações deste exercício ficam na branch `exercicio-jenkins`, preservando a entrega anterior na `main`.
+
 O `Jenkinsfile` executa em um agente Windows com Node.js, npm e Git no PATH:
 
 1. **Preparação do ambiente:** obtém o código do GitHub, limpa os resultados anteriores e verifica se a interface do Hub está acessível.
