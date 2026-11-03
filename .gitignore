@@ -15,3 +15,7 @@ cypress/videos/
 # Arquivos temporários do sistema
 .DS_Store
 Thumbs.db
+
+# Jenkins local e relatórios do pipeline
+.jenkins-local/
+cypress/results/
