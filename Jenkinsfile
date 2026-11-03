@@ -16,6 +16,10 @@ pipeline {
         string(name: 'BASE_URL', defaultValue: 'http://localhost:3000', description: 'Endereço do Hub de Leitura com interface e API acessíveis pelo agente Jenkins.')
     }
 
+    environment {
+        BASE_URL = "${params.BASE_URL ?: 'http://localhost:3000'}"
+    }
+
     stages {
         stage('Preparação do ambiente') {
             steps {
