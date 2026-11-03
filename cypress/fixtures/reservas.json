@@ -1,0 +1,84 @@
+{
+    "reservations": [
+        {
+            "id": 6,
+            "status": "active",
+            "reservation_date": "2025-10-21 03:19:55",
+            "pickup_deadline": "2025-10-23T03:19:55.346Z",
+            "pickup_date": null,
+            "return_deadline": null,
+            "return_date": null,
+            "notes": "",
+            "renewal_count": 0,
+            "title": "Novo livro fixture",
+            "author": "Fabio Araújo",
+            "category": "Aventura",
+            "cover_image": "menina-que-roubava-livros.jpg",
+            "isbn": "978-85-AUTO-0008-4",
+            "editor": "Editora Intrínseca",
+            "language": "Português",
+            "calculated_status": "active",
+            "hours_remaining": 47
+        },
+        {
+            "id": 6,
+            "status": "active",
+            "reservation_date": "2025-10-21 03:19:55",
+            "pickup_deadline": "2025-10-23T03:19:55.346Z",
+            "pickup_date": null,
+            "return_deadline": null,
+            "return_date": null,
+            "notes": "",
+            "renewal_count": 0,
+            "title": "Novo livro com boas práticas",
+            "author": "ana Araújo",
+            "category": "Aventura",
+            "cover_image": "menina-que-roubava-livros.jpg",
+            "isbn": "978-85-AUTO-0008-4",
+            "editor": "Editora Intrínseca",
+            "language": "Português",
+            "calculated_status": "active",
+            "hours_remaining": 47
+        },
+        {
+            "id": 3,
+            "status": "cancelled",
+            "reservation_date": "2025-09-09 20:15:41",
+            "pickup_deadline": "2025-09-11T20:15:41.357Z",
+            "pickup_date": null,
+            "return_deadline": null,
+            "return_date": null,
+            "notes": "Cancelado por solicitação do usuário",
+            "renewal_count": 0,
+            "title": "O Morro dos Ventos Uivantes",
+            "author": "Emily Brontë",
+            "category": "Romance",
+            "cover_image": "morro-ventos.jpg",
+            "isbn": "978-85-AUTO-0014-5",
+            "editor": "Editora Martin Claret",
+            "language": "Português",
+            "calculated_status": "cancelled",
+            "hours_remaining": null
+        }
+    ],
+    "statistics": {
+        "active": 1,
+        "pickedUp": 0,
+        "returned": 0,
+        "cancelled": 2,
+        "overdue": 0,
+        "expired": 0
+    },
+    "pagination": {
+        "total": 3,
+        "limit": 20,
+        "offset": 0,
+        "hasNext": false,
+        "hasPrev": false,
+        "showing": 3
+    },
+    "filters": {
+        "status": "all",
+        "orderBy": "desc"
+    }
+}

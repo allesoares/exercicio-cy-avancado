@@ -1,0 +1,24 @@
+{
+  "name": "teste-cy-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EBAC-QE/teste-cy-base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EBAC-QE/teste-cy-base/issues"
+  },
+  "homepage": "https://github.com/EBAC-QE/teste-cy-base#readme",
+  "dependencies": {
+    "cypress": "^14.5.4"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "1984",
+      "author": "George Orwell",
+      "description": "Livro usado no cenário de busca do catálogo.",
+      "category": "Ficção",
+      "editor": "Companhia das Letras",
+      "language": "Português",
+      "format": "Físico",
+      "total_copies": 3,
+      "available_copies": 3,
+      "cover_image": "1984.jpg"
+    }
+  ],
+  "pagination": {
+    "total": 1,
+    "limit": 12,
+    "offset": 0,
+    "currentPage": 1,
+    "totalPages": 1,
+    "hasNext": false,
+    "hasPrev": false,
+    "showing": 1
+  },
+  "filters": {
+    "search": "1984"
+  }
+}

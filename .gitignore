@@ -1,0 +1,17 @@
+node_modules/
+
+# Configurações locais e credenciais
+cypress.env*.json
+!cypress.env.example.json
+.env
+.env.*
+!.env.example
+
+# Arquivos gerados durante os testes
+cypress/screenshots/
+cypress/videos/
+*.log
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
