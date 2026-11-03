@@ -66,11 +66,11 @@ Acesse http://localhost:8080. Em uma instalação nova, siga o assistente e inst
    - ID `hub-leitura-admin`: email e senha do administrador.
 2. Configure o label `windows` no agente que executará os testes. Para o exercício local, pode ser o nó integrado do Jenkins.
 3. Crie um item do tipo **Pipeline**, com o nome `exercicio-cy-avancado`.
-4. Em **Definition**, selecione **Pipeline script from SCM**, SCM **Git**, URL `https://github.com/allesoares/exercicio-cy-avancado.git`, branch `*/main` e Script Path `Jenkinsfile`.
+4. Em **Definition**, selecione **Pipeline script from SCM**, SCM **Git**, URL `https://github.com/allesoares/exercicio-cy-avancado.git`, branch `*/exercicio-jenkins` e Script Path `Jenkinsfile`.
 5. Salve e use **Build Now** para a primeira execução. Nas seguintes, use **Build with Parameters** para informar `BASE_URL`, se necessário.
 
 Mantenha o Hub de Leitura em execução e acessível pelo agente. `localhost` representa o computador do agente Jenkins. O usuário comum e o administrador devem existir, e o livro **1984** deve estar disponível. As credenciais são fornecidas pelo Jenkins; o arquivo local `cypress.env.json` não é necessário no checkout do pipeline.
 
-Depois da primeira execução, o gatilho `pollSCM` consulta o GitHub a cada dois minutos e inicia um build quando encontra um novo commit na branch `main`. O Jenkins precisa permanecer ligado e com acesso à rede. Alterações locais passam a ser detectadas depois de commit e push. A execução manual também continua disponível.
+Depois da primeira execução, o gatilho `pollSCM` consulta o GitHub a cada dois minutos e inicia um build quando encontra um novo commit na branch `exercicio-jenkins`. O Jenkins precisa permanecer ligado e com acesso à rede. Alterações locais passam a ser detectadas depois de commit e push. A execução manual também continua disponível.
 
 Abra o build para consultar **Console Output**, **Test Result** e os artefatos arquivados. Uma falha do Cypress faz o pipeline falhar.
