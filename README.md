@@ -1,41 +1,39 @@
-# Exercício Cypress Avançado — Hub de Leitura
-(Alexandre Soares)
-Testes do Hub de Leitura para praticar Intercept e AppActions, aproveitando os cenários de catálogo e cesta do projeto de testes UI e o contrato do projeto de API usados em aula.
+# Cypress avançado com Intercept e App Actions
 
-## Cenários do exercício
+Neste exercício, usei o Hub de Leitura para praticar o controle das respostas da API e a preparação da sessão antes dos testes de interface. Com Intercept, simulei respostas do catálogo; com App Actions, fiz o login pela API antes de validar a cesta.
+
+**Tecnologias:** Cypress, JavaScript e Node.js.
+
+## O que foi implementado
 
 | Arquivo | Cenário |
 | --- | --- |
-| `catalogo.cy.js` | Positivo com Intercept: buscar um livro e validar título e autor da resposta simulada. |
-| `catalogo.cy.js` | Negativo com Intercept: simular erro 500 na listagem e validar a mensagem na interface. |
-| `cesta.cy.js` | AppActions: autenticar por API com `cy.loginApp`, preparar o estado da aplicação e adicionar um livro à cesta pela interface. |
+| [catalogo.cy.js](cypress/e2e/catalogo.cy.js) | Busca com resposta simulada, conferindo título e autor |
+| [catalogo.cy.js](cypress/e2e/catalogo.cy.js) | Resposta 500 e mensagem de erro na interface |
+| [cesta.cy.js](cypress/e2e/cesta.cy.js) | Login por API e inclusão de um livro na cesta pela interface |
 
-Os exemplos do professor continuam em `login.cy.js` e `admin-reservas.cy.js`.
+Os exemplos do professor continuam em `login.cy.js` e `admin-reservas.cy.js`. A App Action de login está em [commands.js](cypress/support/commands.js).
 
 ## Como executar
 
-Pré-requisitos: Node.js, npm e o Hub de Leitura com interface e API disponíveis em `http://localhost:3000`. 
+Tenha Node.js e npm instalados e o [Hub de Leitura integrado](https://github.com/EBAC-QE/hub-de-leitura-integrado) em `http://localhost:3000`, com interface e API disponíveis.
 
-1. Instale as dependências com `npm ci`.
-2. Copie `cypress.env.example.json` para `cypress.env.json` e ajuste as credenciais dos usuários de teste. Os valores do exemplo são contas demonstrativas da aula.
-3. Garanta que o catálogo tenha o livro **1984**, disponível para adicionar à cesta no cenário com AppActions.
-4. Execute os novos cenários:
+```powershell
+npm ci
+Copy-Item cypress.env.example.json cypress.env.json
+```
 
-```bash
+Preencha as contas de teste no arquivo local e garanta que o catálogo tenha o livro **1984**, disponível para o cenário da cesta. Em seguida:
+
+```powershell
 npx cypress run --spec "cypress/e2e/catalogo.cy.js,cypress/e2e/cesta.cy.js"
 ```
 
-Para abrir o Cypress, use `npx cypress open`. Para executar também os exemplos do professor, use `npx cypress run`.
+Para abrir a interface, use `npx cypress open`. Para executar também os exemplos, use `npm test`. Caso a aplicação esteja em outro endereço, use `--config baseUrl=http://localhost:3001`.
 
-Para outro endereço da aplicação, configure `BASE_URL` no ambiente ou use `npx cypress run --config baseUrl=http://localhost:3001`.
+## Organização
 
-## Estrutura
-
-- `cypress/e2e`: cenários de teste.
-- `cypress/support/commands.js`: comandos reutilizados, incluindo a AppAction de login.
-- `cypress/fixtures`: massas de dados para respostas simuladas.
-
-Credenciais locais, dependências, screenshots, vídeos e logs ficam fora do Git. O `package-lock.json` permanece versionado para reproduzir a instalação.
+Os cenários ficam em `cypress/e2e`, as respostas simuladas em `cypress/fixtures` e as ações reutilizadas em `cypress/support/commands.js`. O arquivo `cypress.env.json` é local e não é versionado.
 
 ## Pipeline Jenkins
 
@@ -76,3 +74,9 @@ Mantenha o Hub de Leitura em execução e acessível pelo agente. `localhost` re
 Depois da primeira execução, o gatilho `pollSCM` consulta o GitHub a cada dois minutos e inicia um build quando encontra um novo commit na branch `exercicio-jenkins`. O Jenkins precisa permanecer ligado e com acesso à rede. Alterações locais passam a ser detectadas depois de commit e push. A execução manual também continua disponível.
 
 Abra o build para consultar **Console Output**, **Test Result** e os artefatos arquivados. Uma falha do Cypress faz o pipeline falhar.
+
+## Contexto
+
+Exercício desenvolvido por Alexandre Soares durante o curso da EBAC, com a aplicação e os exemplos fornecidos nas aulas.
+
+[Voltar ao portfólio](https://github.com/allesoares/qa-portfolio)
